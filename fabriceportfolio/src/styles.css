@@ -14,6 +14,9 @@
   --shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
 }
 
+/* -------------------------- */
+/* Common/Global Styles       */
+/* -------------------------- */
 * {
   box-sizing: border-box;
 }
@@ -26,7 +29,7 @@ body {
   margin: 0;
   min-height: 100%;
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(rgba(7, 9, 15, 0.3), rgba(7, 9, 15, 0.3)), url('media/photos/img1.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(7, 9, 15, 0.3), rgba(7, 9, 15, 0.3)), url('../media/photos/img1.jpg') center/cover no-repeat;
   color: var(--text);
 }
 
@@ -113,13 +116,16 @@ nav {
   font-size: 1.15rem;
 }
 
+/* -------------------------- */
+/* Hero Styles (Index & Pages) */
+/* -------------------------- */
 .hero {
   position: relative;
   min-height: 100vh;
   display: grid;
   place-items: center;
   padding: 0 1.5rem;
-  background: url('images/hero.jpg') center/cover no-repeat;
+  background: url('../media/photos/img1.jpg') center/cover no-repeat;
 }
 
 .hero-overlay {
@@ -133,7 +139,7 @@ nav {
   min-height: 42vh;
   display: grid;
   place-items: center;
-  padding: clamp(4rem, 6vw, 6rem) 1.5rem;
+  padding: calc(110px + clamp(2rem, 4vw, 4rem)) 1.5rem clamp(4rem, 6vw, 6rem);
   background: rgba(7, 9, 15, 0.4);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -230,6 +236,9 @@ nav {
   color: var(--text);
 }
 
+/* -------------------------- */
+/* Common Section Styles      */
+/* -------------------------- */
 .section {
   padding: clamp(4rem, 6vw, 8rem) 1.5rem;
   background: rgba(7, 9, 15, 0.45);
@@ -267,6 +276,9 @@ nav {
   text-align: center;
 }
 
+/* -------------------------- */
+/* About Page Styles          */
+/* -------------------------- */
 .about-grid,
 .contact-grid {
   display: grid;
@@ -323,10 +335,57 @@ nav {
   color: var(--text);
 }
 
-.stat span {
+..stat span {
   display: block;
   margin-top: 0.35rem;
   color: var(--muted);
+}
+
+.about-detail-card {
+  margin-top: 2.5rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 100%;
+  background: linear-gradient(180deg, rgba(13, 23, 39, 0.98), rgba(18, 30, 50, 0.95));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 32px;
+  box-shadow: var(--shadow);
+  min-height: auto;
+}
+
+.about-detail-card h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: clamp(1.8rem, 2.2vw, 2.4rem);
+}
+
+.about-detail-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.85;
+}
+
+.about-detail-list {
+  margin: 1.75rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+}
+
+.about-detail-list li {
+  padding: 1.25rem 1.4rem;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  line-height: 1.75;
+}
+
+.about-detail-list li strong {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: var(--text);
 }
 
 .languages {
@@ -337,6 +396,9 @@ nav {
   font-weight: 500;
 }
 
+/* -------------------------- */
+/* Tours Page Styles          */
+/* -------------------------- */
 .tours-grid,
 .gallery-grid,
 .testimonials-grid {
@@ -432,6 +494,9 @@ nav {
   font-weight: 700;
 }
 
+/* -------------------------- */
+/* Gallery Page Styles        */
+/* -------------------------- */
 .gallery-grid {
   grid-template-columns: repeat(3, minmax(280px, 1fr));
   gap: 1.75rem;
@@ -596,6 +661,9 @@ nav {
 
 
 
+/* -------------------------- */
+/* Testimonials Page Styles   */
+/* -------------------------- */
 .testimonial-card {
   display: flex;
   flex-direction: column;
@@ -637,6 +705,9 @@ nav {
   line-height: 1.9;
 }
 
+/* -------------------------- */
+/* Contact Page Styles        */
+/* -------------------------- */
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -762,6 +833,9 @@ nav {
   outline-offset: 2px;
 }
 
+/* -------------------------- */
+/* Footer Styles (All Pages)  */
+/* -------------------------- */
 footer.site-footer {
   background: rgba(5, 10, 18, 0.96);
   padding: 3rem 1.5rem;
@@ -823,6 +897,9 @@ footer.site-footer {
   font-size: 0.95rem;
 }
 
+/* -------------------------- */
+/* WhatsApp Float (All Pages) */
+/* -------------------------- */
 .whatsapp-float {
   position: fixed;
   right: 1.5rem;
@@ -843,6 +920,9 @@ footer.site-footer {
   transform: translateY(-3px);
 }
 
+/* -------------------------- */
+/* Media Queries (Responsive) */
+/* -------------------------- */
 @media (max-width: 980px) {
   .tours-intro {
     grid-template-columns: 1fr;
@@ -864,7 +944,7 @@ footer.site-footer {
 
   .page-hero,
   .section {
-    padding: clamp(3rem, 5vw, 5rem) 1.25rem;
+    padding: calc(110px + 2rem) 1.25rem 5rem;
   }
 
   .footer-links {
@@ -873,10 +953,6 @@ footer.site-footer {
 }
 
 @media (max-width: 720px) {
-  nav {
-    padding: 0 1rem;
-  }
-
   .nav-links {
     position: fixed;
     top: 110px;
@@ -978,7 +1054,7 @@ footer.site-footer {
 
   .page-hero {
     min-height: auto;
-    padding: 3rem 1rem;
+    padding: calc(110px + 2rem) 1rem 3rem;
   }
 
   .page-hero-content h1 {
@@ -1014,6 +1090,7 @@ footer.site-footer {
 
 @media (max-width: 540px) {
   nav {
+    height: 80px;
     padding: 0.9rem 0.85rem;
   }
 
@@ -1022,15 +1099,15 @@ footer.site-footer {
   }
 
   .nav-links {
+    top: 80px;
     padding: 1.25rem 0.85rem 1.4rem;
+    max-height: calc(100vh - 80px);
   }
 
   .page-hero,
   .section {
-    padding: 2rem 0.85rem;
+    padding: calc(80px + 1rem) 0.85rem 2rem;
   }
-
-  .hero h1,
   .page-hero-content h1 {
     font-size: clamp(2rem, 8vw, 2.6rem);
   }
